@@ -27,10 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout app repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -96,10 +96,10 @@ jobs:
 
       - name: Checkout deployment repo
         if: github.ref == 'refs/heads/main'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.DEPLOY_REPO }}
-          token: ${{ secrets.DEPLOY_REPO_TOKEN }}
+          token: ${{ secrets.DEPLOY_REPO_TOKEN || github.token }}
           path: deploy
 
       - name: Update deployment image tag
