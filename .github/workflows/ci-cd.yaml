@@ -20,7 +20,7 @@ env:
   REPOSITORY: golden-path
   IMAGE_NAME: product-service
   DEPLOY_REPO: ashequrrasul/gcp-golden-path-platform
-  DEPLOY_VALUES_FILE: apps/product-service/values.yaml
+  DEPLOY_VALUES_FILE: helm-charts/product-service/values.yaml
 
 jobs:
   test-build-scan-publish:
